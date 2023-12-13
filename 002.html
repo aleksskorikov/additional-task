@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/002.css">
+    <link rel="stylesheet" href="./css/resets.css">
+    <script src="./scripts/002.js" defer></script>
+    <title>Document</title>
+</head>
+<body>
+    <div class="conteiner">
+        <form class="form">
+            <label for="formName" class="form__lable">Введіть Ваше Ім'я</label>
+            <input id="formName" type="text" placeholder="Ваше і'мя" name="name" class="form__input" required >
+        </form>
+        <button  class="form__btn" id="btn">Відправити</button>
+        <div class="information__window" id="information__window">
+            <div class="error" id="error">
+                <h1 class="error-title">!!!ATTENTION!!!!</h1>
+                <p class="error-text">Ви ввели не своє ім'я!!!</p>
+                <p class="error-text">Введіть своє ім'я....</p>
+            </div>
+            <div class="ok" id="ok">
+                <img src="./img/6012646.jpg" alt="">
+                <p class="ok-text" id="ok-text"></p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
