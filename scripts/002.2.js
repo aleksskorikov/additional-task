@@ -3,9 +3,7 @@
 
 
 const list = document.querySelector("select");
-
 const products = document.querySelectorAll("#product");
-
 
 function filter() {
     list.addEventListener(`click`, event => {
@@ -14,32 +12,27 @@ function filter() {
 
         switch (targetid) {
             case "all":
-                itrms("product");
+                items("product");
             break;
             case "spin":
-                itrms(targetid);
+                items(targetid);
             break;
             case "kast":
-                itrms(targetid);
+                items(targetid);
             break;
             case "fid":
-                itrms(targetid);
+                items(targetid);
             break;
             case "karp":
-                itrms(targetid);
+                items(targetid);
             break;
         }
     })
 }
 filter();
 
-function itrms(className) {
+function items(className) {
     products.forEach(product => {
-        if (product.classList.contains(className)) {
-            product.style = `display: block`;
-        }
-        else {
-            product.style = `display: none`;
-        }
+        product.classList.contains(className) ? product.style = `display: block` : product.style = `display: none`;
     })
 }

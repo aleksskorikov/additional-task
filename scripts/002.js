@@ -9,14 +9,8 @@ const error = document.querySelector("#error");
 const ok = document.querySelector("#ok");
 const okText = document.querySelector("#ok-text");
 
-btn.addEventListener("click", function ()  {
+btn.addEventListener("click", () => {
     let name = input.value.length;
-    if (name < 3) {
-        error.style = "display: block";
-    }
-    else {
-        ok.style = "display: block";
-        okText.innerHTML = `${input.value}`;
-        console.log(`${input.value}`);
-    }
+    name < 3 ? error.style = "display: block" :
+        (ok.style = "display: block", okText.innerHTML = `${input.value}`, console.log(`${input.value}`));
 })

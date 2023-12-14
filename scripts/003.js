@@ -1,14 +1,10 @@
 "use strict";
 
 const images = document.querySelectorAll(".img");
-const next = document.querySelector("#btn-next");
-const previous = document.querySelector("#btn-previous");
+const next = document.querySelector("#btn-next").addEventListener('click', showNextItem);
+const previous = document.querySelector("#btn-previous").addEventListener('click', showPreviousItem);
 const itemCount = images.length;
 let count = 0;
-
-next.addEventListener('click', showNextItem);
-previous.addEventListener('click', showPreviousItem);
-document.addEventListener('keydown', keyPress);
 
 function showNextItem () {
     images[count].classList.remove('active');
@@ -23,9 +19,8 @@ function showPreviousItem() {
 // console.log(count);
 }
 
-function keyPress(e) {
-    e.keyCode == '37' ? showPreviousItem() : showNextItem();
-}
+document.addEventListener('keydown', e => e.keyCode == '37' ? showPreviousItem() : showNextItem());
+
 
 const img1 = document.querySelector("#img1");
 const img2 = document.querySelector("#img2");

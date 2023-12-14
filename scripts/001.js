@@ -7,9 +7,9 @@ const text2 = document.querySelector("#text2");
 const text3 = document.querySelector("#text3");
 const buttons = document.querySelectorAll("button");
 
-buttons.forEach(btn => { btn.addEventListener("click", calculator) });
+buttons.forEach(btn => { btn.addEventListener("click", replacement) });
 
-function calculator(e) {
+function replacement(e) {
     switch (true) {
         case (e.target.id == "btn1"):
             text1.textContent = text3.textContent;
