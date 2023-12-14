@@ -8,32 +8,23 @@ let count = 0;
 
 next.addEventListener('click', showNextItem);
 previous.addEventListener('click', showPreviousItem);
-// document.addEventListener('keydown', keyPress);
+document.addEventListener('keydown', keyPress);
 
-function showNextItem() {
+function showNextItem () {
     images[count].classList.remove('active');
-
-        if(count < itemCount - 1) {
-            count++;
-        } else {
-            count = 0;
-        }
-
+    count < itemCount - 1 ? count++ : count = 0;
     images[count].classList.add('active');
-// console.log(count);
 }
 
 function showPreviousItem() {
     images[count].classList.remove('active');
-
-        if(count > 0) {
-            count--;
-        } else {
-            count = itemCount - 1;
-        }
-
+    count > 0 ? count-- : count = itemCount - 1;
     images[count].classList.add('active');
 // console.log(count);
+}
+
+function keyPress(e) {
+    e.keyCode == '37' ? showPreviousItem() : showNextItem();
 }
 
 const img1 = document.querySelector("#img1");
@@ -85,12 +76,3 @@ document.addEventListener("keydown", (e) => {
             break;
     }
 })
-// function keyPress(e) {
-// e = e || window.event;
-
-// if (e.keyCode == '37') {
-//     showPreviousItem();
-// } else if (e.keyCode == '39') {
-//     showNextItem();
-// }
-// }
